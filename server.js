@@ -18,6 +18,7 @@ const sendEmail = async ({ name, email, subject, message, type }) => {
 // Handle POST requests to /api/onboard
 app.post('/api/onboard', async (req, res) => {
     try {
+        // Simulated email function
         await sendEmail({
             name: req.body.fullName,
             email: req.body.companyName,
@@ -31,7 +32,10 @@ app.post('/api/onboard', async (req, res) => {
     }
 });
 
+
 // Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
